@@ -1,0 +1,61 @@
+﻿@model IEnumerable<VehicleApp.Model.VehicleModel>
+
+<h2>Veículos</h2>
+
+<p>
+        @Html.ActionLink("Create New", "Create")
+</p>
+     
+     
+    <table class="table">
+        <tbody><tr>
+            <th>
+                Modelo
+            </th>
+            <th>
+                Marca
+            </th>
+            <th>
+                Ano
+            </th>
+            <th>
+                Cor
+            </th>
+            <th>
+                Preço
+            </th>
+            <th>
+                Novo
+            </th>
+            <th></th>
+        </tr>
+
+            @foreach (var item in Model) {
+         
+<tr>
+            <td>
+                @item.Model
+            </td>
+            <td>
+                @item.Brand
+            </td>
+            <td>
+                @item.Year
+            </td>
+            <td>
+                @item.Color
+            </td>
+            <td>
+                @item.Price
+            </td>
+            <td>
+                @item.Isnew
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            </td>
+        </tr>
+        }
+     
+</tbody></table>
